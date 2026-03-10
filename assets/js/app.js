@@ -118,33 +118,9 @@
       sticker.href = "https://band.link/2r6BC";
       sticker.target = "_blank";
       sticker.rel = "noreferrer";
-      sticker.textContent = "СЛУШАТЬ ВЕЗДЕ";
+      sticker.textContent = "НАЖМИ ЧТО БЫ СЛУШАТЬ ВЕЗДЕ";
       sticker.style.left = `${rand(6, 70).toFixed(1)}%`;
       sticker.style.top = `${rand(10, 78).toFixed(1)}%`;
-      sticker.style.transform = `rotate(${rand(-12, 12).toFixed(1)}deg)`;
+      sticker.style.setProperty("--rot", `${rand(-12, 12).toFixed(1)}deg`);
       target.appendChild(sticker);
     }
-
-    if (boardCanvas && boardFullscreenBtn) {
-      const closeBoard = () => {
-        boardCanvas.classList.remove("fullscreen");
-        document.body.classList.remove("board-open");
-        boardFullscreenBtn.textContent = "ОТКРЫТЬ НА ВЕСЬ ЭКРАН";
-      };
-
-      boardFullscreenBtn.addEventListener("click", () => {
-        const isOpen = boardCanvas.classList.toggle("fullscreen");
-        document.body.classList.toggle("board-open", isOpen);
-        boardFullscreenBtn.textContent = isOpen ? "ЗАКРЫТЬ ПОЛНЫЙ ЭКРАН" : "ОТКРЫТЬ НА ВЕСЬ ЭКРАН";
-      });
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && boardCanvas.classList.contains("fullscreen")) {
-          closeBoard();
-        }
-      });
-
-      boardCloseBtn?.addEventListener("click", closeBoard);
-    }
-
-

@@ -709,12 +709,21 @@ body::after {
   z-index: 4;
   text-decoration: none;
   color: #1f1508;
-  background: rgba(241, 214, 109, 0.52);
-  border: 1px solid #786325;
+  background: rgb(241, 215, 109);
+  border: 4px dotted #786325;
   padding: 5px 8px;
   font-size: clamp(0.72rem, 1.35vw, 0.84rem);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   opacity: 0.68;
+
+  transform: rotate(var(--rot, 0deg)) scale(1);
+  transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+}
+
+.listen-sticker:hover {
+  opacity: 1;
+  transform: rotate(var(--rot, 0deg)) scale(1.15);
+  filter: brightness(1.1);
 }
 
 #system-message {
