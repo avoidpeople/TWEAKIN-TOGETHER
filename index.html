@@ -17,8 +17,40 @@
     </div>
   </div>
 
+  <div class="mobile-nav" id="mobile-nav" aria-label="Навигация архива">
+    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav-panel">
+      НАВИГАЦИЯ АРХИВА
+      <span class="mobile-nav-caret" aria-hidden="true">▾</span>
+    </button>
+    <div class="mobile-nav-panel" id="mobile-nav-panel" role="navigation" aria-label="Разделы">
+      <button class="mobile-nav-item" type="button" data-scroll="#file-444" data-label="Досье">Досье</button>
+      <button class="mobile-nav-item" type="button" data-scroll="#video-evidence" data-label="Видеоматериалы">Видеоматериалы</button>
+      <button class="mobile-nav-item" type="button" data-scroll="#suspects" data-label="Подозреваемые">Подозреваемые</button>
+      <button class="mobile-nav-item" type="button" data-scroll="#accomplices" data-label="Соучастники">Соучастники</button>
+      <button class="mobile-nav-item" type="button" data-scroll="#chats" data-label="Переписки">Переписки</button>
+      <button class="mobile-nav-item" type="button" data-scroll="#tracklist" data-label="Треклист">Треклист</button>
+      <button class="mobile-nav-item" type="button" data-scroll="#records" data-label="Записи">Записи</button>
+    </div>
+  </div>
+
+  <div class="desktop-jumpbar" id="desktop-jumpbar" aria-label="Навигация архива (ПК)">
+    <div class="section-jump">
+      <div class="jump-title">ПЕРЕЙТИ К РАЗДЕЛУ</div>
+      <div class="jump-actions" role="navigation" aria-label="Навигация по разделам">
+        <button class="jump-btn" type="button" data-scroll="#file-444" data-label="Досье">Досье</button>
+        <button class="jump-btn" type="button" data-scroll="#video-evidence" data-label="Видеоматериалы">Видеоматериалы</button>
+        <button class="jump-btn" type="button" data-scroll="#suspects" data-label="Подозреваемые">Подозреваемые</button>
+        <button class="jump-btn" type="button" data-scroll="#accomplices" data-label="Соучастники">Соучастники</button>
+        <button class="jump-btn" type="button" data-scroll="#chats" data-label="Переписки">Переписки</button>
+        <button class="jump-btn" type="button" data-scroll="#tracklist" data-label="Треклист">Треклист</button>
+        <button class="jump-btn" type="button" data-scroll="#records" data-label="Записи">Записи</button>
+      </div>
+    </div>
+  </div>
+
   <div id="screen-flash" aria-hidden="true"></div>
   <div id="system-message" aria-live="polite"></div>
+  <div id="section-toast" aria-live="polite"></div>
 
   <main class="page">
     <header class="top-block section stamp-zone">
@@ -65,16 +97,58 @@
           <a class="listen-btn" href="https://band.link/2r6BC" target="_blank" rel="noreferrer">СЛУШАТЬ ВЕЗДЕ</a>
         </div>
         <div class="cover-wrap">
-          <img src="assets/images/obloga.jpg" alt="Обложка альбома ТВИКАЕМ ВМЕСТЕ" onerror="this.onerror=null;this.src='assets/images/tweakin.png';">
+          <img id="album-cover" src="assets/images/obloga.jpg" alt="Обложка альбома ТВИКАЕМ ВМЕСТЕ" onerror="this.onerror=null;this.src='assets/images/tweakin.png';">
         </div>
       </div>
     </section>
 
-    <section class="section stamp-zone">
+    <section class="section document stamp-zone" id="video-evidence">
+      <h2 class="section-title">НАЙДЕННЫЕ ВИДЕОМАТЕРИАЛЫ</h2>
+      <div class="video-evidence">
+        <div class="video-caption">
+          <div class="video-meta">
+            <span>FILE ID: 444-VIDEO-01</span>
+            <span class="video-stamp">EVIDENCE</span>
+          </div>
+          <p><strong>Файл:</strong> ЧЁРНЫЕ КУПЮРЫ</p>
+          <p class="video-note">Найденный видеоматериал, предположительно связанный с расследованием альбома <strong>ТВИКАЕМ ВМЕСТЕ</strong>.</p>
+        </div>
+        <div class="video-frame" data-youtube="https://www.youtube.com/watch?v=pBcQz4vBzw4">
+          <div class="video-preview" id="video-preview">
+            <img class="video-preview-img" src="assets/images/maksim3.PNG" alt="Превью видеодоказательства" loading="lazy">
+            <div class="video-preview-shade" aria-hidden="true"></div>
+            <button class="listen-btn video-play" id="video-play" type="button">ВОСПРОИЗВЕСТИ ФАЙЛ</button>
+          </div>
+          <iframe
+            id="evidence-video"
+            width="560"
+            height="315"
+            src="about:blank"
+            title="ЧЁРНЫЕ КУПЮРЫ — видеодоказательство"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+          <div class="video-loader hide" aria-live="polite">
+            <div class="loader-title">DECRYPTING ARCHIVE FILE</div>
+            <div class="loader-sub" data-base="РАСШИФРОВКА ФАЙЛА">РАСШИФРОВКА ФАЙЛА</div>
+            <div class="loader-bar" aria-hidden="true"><span></span></div>
+          </div>
+          <a class="video-overlay" href="https://www.youtube.com/watch?v=pBcQz4vBzw4" target="_blank" rel="noopener noreferrer">
+            ОТКРЫТЬ В YOUTUBE
+          </a>
+        </div>
+        <a class="listen-btn youtube-btn" href="https://www.youtube.com/watch?v=pBcQz4vBzw4" target="_blank" rel="noopener noreferrer">СМОТРЕТЬ НА YOUTUBE</a>
+      </div>
+    </section>
+
+    <section class="section stamp-zone" id="suspects">
       <h2 class="section-title">ГЛАВНЫЕ ПОДОЗРЕВАЕМЫЕ</h2>
       <div class="suspects-grid">
         <article class="profile-card major">
-          <img src="assets/images/akaka.png" alt="AKAKA">
+          <img id="suspect-akaka" src="assets/images/akaka.JPEG" alt="AKAKA">
           <div class="card-body">
             <h3>AKAKA</h3>
             <p><strong>Имя:</strong> Акакий</p>
@@ -92,7 +166,7 @@
         </article>
 
         <article class="profile-card major">
-          <img src="assets/images/404.png" alt="404reasonstolive">
+          <img id="suspect-maksim" src="assets/images/maksim.JPEG" alt="404reasonstolive">
           <div class="card-body">
             <h3>404reasonstolive</h3>
             <p><strong>Имя:</strong> Максим</p>
@@ -111,17 +185,18 @@
       </div>
     </section>
 
-    <section class="section stamp-zone">
+    <section class="section stamp-zone" id="accomplices">
       <h2 class="section-title">СОУЧАСТНИКИ</h2>
       <div class="accomplices-grid">
         <article class="profile-card minor">
-          <img src="assets/images/mogged.png" alt="MurderWasTheCase">
+          <img src="assets/images/murderWTC.JPEG" alt="MurderWasTheCase">
           <div class="card-body">
             <h3>MurderWasTheCase</h3>
             <p><strong>Имя:</strong> Павел</p>
             <p><strong>Фамилия:</strong> ████████</p>
             <p><strong>Статус:</strong> соучастник</p>
             <p><strong>Архивный номер:</strong> A-444-01</p>
+            <p><strong>Описание:</strong> Отмечен в записях как участник ночных сессий; фигурирует в обсуждениях закупок и темпа работ.</p>
             <div class="card-actions">
               <a href="https://soundcloud.com/codaeon888" target="_blank" rel="noreferrer"><img src="assets/images/sc.png" alt=""><span class="btn-label">SoundCloud</span></a>
               <a href="https://www.instagram.com/murderwtc" target="_blank" rel="noreferrer"><img src="assets/images/inst.png" alt=""><span class="btn-label">Instagram</span></a>
@@ -130,24 +205,26 @@
         </article>
 
         <article class="profile-card minor">
-          <img src="assets/images/mogged.png" alt="XANAX">
+          <img src="assets/images/zina.PNG" alt="Тётя Зина">
           <div class="card-body">
-            <h3>XANAX</h3>
-            <p><strong>Имя:</strong> xanny</p>
+            <h3>ТЁТЯ ЗИНА</h3>
+            <p><strong>Имя:</strong> Зина</p>
             <p><strong>Фамилия:</strong> ████████</p>
-            <p><strong>Статус:</strong> соучастник</p>
+            <p><strong>Статус:</strong> фигурант / внешний контакт</p>
             <p><strong>Архивный номер:</strong> A-444-02</p>
+            <p><strong>Описание:</strong> Вероятный поставщик препаратов и иных веществ, упоминаемых в утёкших переписках. Несколько документов указывают на критическую роль контакта в период записи.</p>
           </div>
         </article>
 
         <article class="profile-card minor">
-          <img src="assets/images/mogged.png" alt="MakTraher">
+          <img src="assets/images/maktraher.JPEG" alt="MakTraher">
           <div class="card-body">
             <h3>MakTraher</h3>
             <p><strong>Имя:</strong> Артём</p>
             <p><strong>Фамилия:</strong> ████████</p>
             <p><strong>Статус:</strong> соучастник</p>
             <p><strong>Архивный номер:</strong> A-444-03</p>
+            <p><strong>Описание:</strong> Зафиксирован как исполнитель технических правок и внесения “кривых” частот; упоминается в рабочих сообщениях.</p>
             <div class="card-actions">
               <a href="https://soundcloud.com/artyom-tuvakin" target="_blank" rel="noreferrer"><img src="assets/images/sc.png" alt=""><span class="btn-label">SoundCloud</span></a>
               <a href="https://www.instagram.com/mak_traher747" target="_blank" rel="noreferrer"><img src="assets/images/inst.png" alt=""><span class="btn-label">Instagram</span></a>
@@ -157,7 +234,7 @@
       </div>
     </section>
 
-    <section class="section document stamp-zone">
+    <section class="section document stamp-zone" id="chats">
       <h2 class="section-title">СЛИТЫЕ ПЕРЕПИСКИ</h2>
       <div class="docs-grid">
         <article class="chat-card">
@@ -252,7 +329,7 @@
       </div>
     </section>
 
-    <section class="section document stamp-zone">
+    <section class="section document stamp-zone" id="tracklist">
       <h2 class="section-title">СПРАВКА ПО ДЕЛУ / ТРЕКИ</h2>
       <div class="track-evidence">
         <div><strong>1 - FENT FM</strong><span><em>Комментарий опера:</em> полная сводка новостей про альбом, резкий рост повторов</span></div>
@@ -272,7 +349,7 @@
       <p class="danger-note">Некоторые записи вызывают сильное привыкание и желание повторного прослушивания.</p>
     </section>
 
-    <section class="section document stamp-zone">
+    <section class="section document stamp-zone" id="records">
       <h2 class="section-title">РАЗДЕЛ ЗАПИСЕЙ</h2>
       <div class="records-grid">
         <article class="record-card"><strong>Запись опера №1</strong><p>FENT FM запускает цикл повторного прослушивания за 6-10 минут.</p></article>
@@ -298,6 +375,12 @@
       </div>
     </section>
   </main>
+
+  <button id="to-top" class="to-top" type="button" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8L6.4 13.4 5 12l7-7z"/>
+    </svg>
+  </button>
 
   <script src="assets/js/app.js"></script>
 </body>
